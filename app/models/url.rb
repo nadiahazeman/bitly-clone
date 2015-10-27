@@ -7,7 +7,7 @@ class Url < ActiveRecord::Base
 	validates :short_url, uniqueness: true
 
 	def shorten
-		random_string = self.SecureRandom.base64(4)
+		self.short_url = SecureRandom.urlsafe_base64(12)
 	end
 end		
 
