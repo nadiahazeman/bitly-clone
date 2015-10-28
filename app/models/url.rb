@@ -8,6 +8,11 @@ class Url < ActiveRecord::Base
 
 	def shorten
 		self.short_url = SecureRandom.urlsafe_base64(12)
+	end	
+
+	def count
+		self.click_count += 1
+		self.save
 	end
 end		
 

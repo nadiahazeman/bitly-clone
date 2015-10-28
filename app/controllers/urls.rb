@@ -11,7 +11,7 @@ post '/urls' do
 		@urls = Url.all
 		@failed = true
 	end
-		erb :"static/index" #embedded ruby
+		redirect '/'
 end	
 
 get '/urls' do
@@ -25,6 +25,7 @@ end
 
 get 'urls/:id' do
 	@url = Url.find_by(id: params[:id])
+	@all_url = Url.all.order(click_count: :desc).limit(10)
 	erb :'static/index'
 end	
 
