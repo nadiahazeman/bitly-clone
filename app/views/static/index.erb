@@ -1,11 +1,23 @@
-<h1 align="center"><font face="verdana">LINK SHORTENER</font></h1>
+<html>
+<head>
+  <link rel="" type="stylesheet">
+  <title></title>
+</head>
+<body>
+
+</body>
+</html>
+
+
+<title>Shorty URL</title>
+<h1 align="center">Shorty URL</h1>
 <p id="loading"></p>
 
     <div class="banner b01 center">
-      <p id = "p01" align = "center"><font face="verdana">Enter your URL here to get started!</font></p>
+      <p id = "p01" align = "center">Enter your URL here to get started!</p>
           <form action="/urls" method="post" style="text-align: center">
               <input id = "input" type ="text" name="long_url" placeholder="Paste your link here" size="40">
-              <input id = "submitbutton" type ="submit" value="CLICK ME!">
+              <input id = "submitbutton" type ="submit" value="Short it!">
           </form>
     </div>
 <div id="shorturl"></div>
@@ -15,12 +27,12 @@
  Please input a valid URL.
  <% end %>
 </div>
-<p>Total URL submitted: <%= @all_url.size %></p>
-<p>Your link has been shortened! </p>
-<a href="http://localhost:9393/<%= @url.short_url %>">
-http://localhost:9393/<%= @url.short_url	%></a></p>
 
-<table id="datatable">
+<% if @url %>
+<p align ="center">Your short url is: <a href="http://localhost:9393/<%=@url.short_url%>">http://localhost:9393/<%=@url.short_url%></a></p>
+<% end %>
+<div>
+<table id="datatable" align="center">
  <tr>
    <th align ="left"><%= "Long URL"%></th>
    <th align ="left"><%= "Shorten URL"%></th>
@@ -35,9 +47,4 @@ http://localhost:9393/<%= @url.short_url	%></a></p>
     <% end %>
 </table>
 
-
-
-   <tbody>
-   </tbody>
- </table>
 </div>

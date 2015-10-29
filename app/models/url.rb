@@ -16,13 +16,3 @@ class Url < ActiveRecord::Base
 	end
 end		
 
-
-
-
-# a = SecureRandom.hex(6)
-# b = SecureRandom.base64(1)
-# c = SecureRandom.urlsafe_base64(12)
-
-# puts a
-# puts b
-# puts c
